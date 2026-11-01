@@ -1,27 +1,47 @@
-# EcommerceAdmin
+# Musical Instrument Store – Admin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+Angular admin dashboard for the musical instrument e-commerce store. It connects to the store API to manage catalog data (products, categories, brands, images) and view customers and orders, behind an authenticated login.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Login, signup and forgot-password pages, with a route guard for logged-in users
+- Dashboard with navbar and sidebar layout
+- Add / list products, categories and brands
+- Product image upload (`product/upload/:id`)
+- Customer list and orders view
 
-## Code scaffolding
+## Tech stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular 15 · TypeScript · RxJS · Angular Material · Bootstrap / ng-bootstrap
 
-## Build
+## Project structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+src/app/api.ts               # API base URLs
+src/app/authentication/      # login, signup, forgot-password
+src/app/catalog/             # products, categories, brands, customers, orders, image upload
+src/app/main-layout/         # dashboard, navbar, sidebar
+src/app/models/              # auth, brand, cart, category, coupon, customer, order, product
+src/app/services/            # API services + logged.guard
+```
 
-## Running unit tests
+## Getting started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+npm start          # http://localhost:4200
+npm run build
+```
 
-## Running end-to-end tests
+Requires the store API running at `http://127.0.0.1:1000/api` (see `src/app/api.ts`), for example [ecommerse-api](https://github.com/tripathi2002/ecommerse-api).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Environment variables
 
-## Further help
+None. API URLs are set in `src/app/api.ts`.
+## Screenshots
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+_Screenshots coming soon._
+
+## License
+
+No license file has been added to this repository yet.
